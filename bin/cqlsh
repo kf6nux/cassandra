@@ -16,4 +16,4 @@
 # limitations under the License.
 
 
-python "$(dirname "$(readlink -f "$0")")/cqlsh.py" "$@"
+python "$(dirname $(perl -e 'use Cwd "abs_path";print abs_path(shift)' $0))/cqlsh.py" "$@"
